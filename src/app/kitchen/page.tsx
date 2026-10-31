@@ -1,0 +1,5 @@
+import { PageHeading, PreviewNotice } from "@/components/page-heading";
+export const metadata = { title: "آشپزخانه" };
+export default function KitchenPage() {
+ return <><PageHeading eyebrow="هماهنگی آشپزخانه" title="از سفارش تا آماده سرو" description="نمای اولیه تابلوی آشپزخانه؛ دریافت و تغییر وضعیت آیتم‌ها در مرحله بعد اضافه می‌شود." /><PreviewNotice /><div className="kitchen-grid">{[{title:"در انتظار",description:"آیتم‌های تازه ثبت‌شده",symbol:"◷"},{title:"در حال آماده‌سازی",description:"آیتم‌های در دست تهیه",symbol:"♨"},{title:"آماده سرو",description:"آماده تحویل به پیشخدمت",symbol:"✓"}].map(column => <section className="kitchen-column" key={column.title}><div className="column-heading"><h2>{column.title}</h2><span>—</span></div><div className="empty-state"><span aria-hidden="true">{column.symbol}</span><h3>{column.description}</h3><p>پس از اتصال به سرور، آیتم‌های سفارش در این بخش نمایش داده می‌شوند.</p></div></section>)}</div><p className="page-note">این تابلو وضعیت زنده ندارد و خالی‌بودن آن به معنی نبود سفارش واقعی نیست.</p></>;
+}
