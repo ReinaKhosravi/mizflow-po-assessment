@@ -1,0 +1,2 @@
+// Runs before paint. It stores presentation preference only, never authentication.
+export const themeBootstrap = `(()=>{try{const m=matchMedia('(prefers-color-scheme: dark)');const apply=()=>{const p=localStorage.getItem('mizflow-theme')||'dark';document.documentElement.dataset.theme=p==='system'?(m.matches?'dark':'light'):(p==='light'?'light':'dark')};apply();m.addEventListener('change',apply)}catch{document.documentElement.dataset.theme='dark'}})()`;

@@ -1,5 +1,3 @@
 # Branches
 
-Reserved for Branch management scoped to a verified restaurant membership.
-
-Add real domain code here when this capability is implemented; do not infer authorization from UI navigation.
+Branch membership scope and composite foreign keys are implemented in the SQL migration. Branch configuration UI and multi-branch staff assignments are deferred.

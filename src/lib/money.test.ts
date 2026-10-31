@@ -6,8 +6,11 @@ describe("IRR money boundary", () => {
     expect(formatToman(0)).toBe("۰ تومان");
     expect(formatToman(15)).toBe("۱٫۵ تومان");
   });
-  it.each([-1, 1.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1])("rejects invalid monetary value %s", value => {
-    expect(irrSchema.safeParse(value).success).toBe(false);
-    expect(() => formatToman(value)).toThrow();
-  });
+  it.each([-1, 1.5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1])(
+    "rejects invalid monetary value %s",
+    (value) => {
+      expect(irrSchema.safeParse(value).success).toBe(false);
+      expect(() => formatToman(value)).toThrow();
+    },
+  );
 });
